@@ -3,81 +3,144 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfólio de Rivaldo Ramos</title>
+    <title>Rivaldo Ramos - Desenvolvedor Python/Java</title>
     <style>
+        :root {
+            --primary: #2c3e50;
+            --secondary: #3498db;
+            --light: #ecf0f1;
+            --dark: #2c3e50;
+        }
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
+            color: #333;
         }
         header {
-            background-color: #333;
-            color: #fff;
-            padding: 20px;
+            background: var(--primary);
+            color: white;
+            padding: 2rem 0;
             text-align: center;
         }
         .container {
-            max-width: 800px;
-            margin: 20px auto 60px; /* Ajuste da margem inferior */
+            max-width: 900px;
+            margin: 2rem auto;
             padding: 0 20px;
         }
-        h1, h2 {
-            text-align: center;
-        }
         .project {
-            margin-bottom: 20px;
-            padding: 20px;
-            background-color: #fff;
-            border-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            background: white;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            border-left: 4px solid var(--secondary);
         }
         .project h3 {
+            color: var(--primary);
             margin-top: 0;
         }
-        .project p {
-            margin-bottom: 0;
+        .tech-badge {
+            display: inline-block;
+            background: var(--light);
+            color: var(--dark);
+            padding: 0.3rem 0.6rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            margin-right: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+        a {
+            color: var(--secondary);
+            text-decoration: none;
+            font-weight: 500;
+        }
+        a:hover {
+            text-decoration: underline;
         }
         footer {
-            background-color: #333;
-            color: #fff;
+            background: var(--primary);
+            color: white;
             text-align: center;
-            padding: 10px 0;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
+            padding: 1rem 0;
+            margin-top: 2rem;
+        }
+        @media (max-width: 600px) {
+            .container {
+                padding: 0 15px;
+            }
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>Portfólio de Rivaldo Ramos</h1>
+        <h1>Rivaldo Ramos</h1>
+        <p>Desenvolvedor Backend | Python | Java</p>
     </header>
 
     <div class="container">
-        <h2>Meus Projetos</h2>
+        <h2>Projetos Destacados</h2>
+        
         <div class="project">
             <h3>Workspring</h3>
-            <p>Um workshop em Java usando bibliotecas e conceitos do spring</p>
-            <a href="https://github.com/ramosmendes/workshop-springboot3-jpa">Link para o projeto</a>
-        </div>
-        <div class="project">
-            <h3>LogSpring</h3>
-            <p>Um sistema de autenticação utilizando springboot</p>
-            <a href="https://github.com/ramosmendes/loginspring">Link para o projeto</a>
-        </div>
-        <div class="project">
-            <h3>Microservice</h3>
-            <p>Um microsserviço em Spring podendo ser utilizado com ou sem Docker</p>
-            <a href="https://github.com/ramosmendes/microspring">Link para o projeto</a>
+            <div>
+                <span class="tech-badge">Java</span>
+                <span class="tech-badge">Spring Boot</span>
+                <span class="tech-badge">JPA</span>
+            </div>
+            <p>Sistema de workshop completo desenvolvido com Spring Boot 3, implementando:</p>
+            <ul>
+                <li>API RESTful com endpoints CRUD</li>
+                <li>Autenticação básica</li>
+                <li>Integração com banco de dados relacional</li>
+            </ul>
+            <a href="https://github.com/ramosmendes/workshop-springboot3-jpa" target="_blank">Ver código no GitHub →</a>
         </div>
 
+        <div class="project">
+            <h3>LogSpring</h3>
+            <div>
+                <span class="tech-badge">Java</span>
+                <span class="tech-badge">Spring Security</span>
+                <span class="tech-badge">JWT</span>
+            </div>
+            <p>Sistema de autenticação seguro com:</p>
+            <ul>
+                <li>Geração e validação de tokens JWT</li>
+                <li>Controle de acesso por roles</li>
+                <li>Configuração personalizada de segurança</li>
+            </ul>
+            <a href="https://github.com/ramosmendes/loginspring" target="_blank">Ver código no GitHub →</a>
+        </div>
+
+        <!-- Adicione seus projetos Python aqui quando tiver -->
+        <!--
+        <div class="project">
+            <h3>API Django</h3>
+            <div>
+                <span class="tech-badge">Python</span>
+                <span class="tech-badge">Django</span>
+                <span class="tech-badge">DRF</span>
+            </div>
+            <p>Descrição do projeto Python...</p>
+            <a href="#" target="_blank">Ver código no GitHub →</a>
+        </div>
+        -->
+
         <h2>Contato</h2>
-        <p>Email: ramosmendesfilho@hotmail.com</p
+        <p>Email: <a href="mailto:ramosmendesfilho@hotmail.com">ramosmendesfilho@hotmail.com</a></p>
+        <p>GitHub: <a href="https://github.com/ramosmendes" target="_blank">github.com/ramosmendes</a></p>
+        <p>LinkedIn: <a href="#" target="_blank">[seu LinkedIn]</a></p>
     </div>
 
     <footer>
-        &copy; 2025 Rivaldo Ramos - Todos os direitos reservados
+        &copy; <span id="year"></span> - Rivaldo Ramos
     </footer>
+
+    <script>
+        // Atualiza o ano automaticamente
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
 </body>
 </html>
