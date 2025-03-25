@@ -10,37 +10,67 @@
             --secondary: #3498db;
             --light: #ecf0f1;
             --dark: #2c3e50;
+            --bg: #f9f9f9;
+            --text: #333;
+            --card-bg: white;
         }
+        
+        [data-theme="dark"] {
+            --primary: #748ea0;
+            --secondary: #3290ee;
+            --light: #073058;
+            --dark: #ecf0f1;
+            --bg: #121212;
+            --text: #f5f5f5;
+            --card-bg: #1e1e1e;
+        }
+        
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
             margin: 0;
             padding: 0;
-            color: #333;
+            color: var(--text);
+            background-color: var(--bg);
+            transition: all 0.3s ease;
         }
+        
         header {
             background: var(--primary);
             color: white;
             padding: 2rem 0;
             text-align: center;
+            position: relative;
         }
+        
+        .header-content {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 20px;
+            position: relative;
+        }
+        
         .container {
             max-width: 900px;
             margin: 2rem auto;
             padding: 0 20px;
         }
+        
         .project {
-            background: white;
+            background: var(--card-bg);
             border-radius: 8px;
             padding: 1.5rem;
             margin-bottom: 1.5rem;
             box-shadow: 0 3px 10px rgba(0,0,0,0.1);
             border-left: 4px solid var(--secondary);
+            transition: all 0.3s ease;
         }
+        
         .project h3 {
             color: var(--primary);
             margin-top: 0;
         }
+        
         .tech-badge {
             display: inline-block;
             background: var(--light);
@@ -51,14 +81,17 @@
             margin-right: 0.5rem;
             margin-bottom: 0.5rem;
         }
+        
         a {
             color: var(--secondary);
             text-decoration: none;
             font-weight: 500;
         }
+        
         a:hover {
             text-decoration: underline;
         }
+        
         footer {
             background: var(--primary);
             color: white;
@@ -66,17 +99,95 @@
             padding: 1rem 0;
             margin-top: 2rem;
         }
+        
+        .theme-switch-wrapper {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .theme-switch {
+            display: inline-block;
+            height: 24px;
+            position: relative;
+            width: 50px;
+        }
+        
+        .theme-switch input {
+            display: none;
+        }
+        
+        .slider {
+            background-color: #ccc;
+            bottom: 0;
+            cursor: pointer;
+            left: 0;
+            position: absolute;
+            right: 0;
+            top: 0;
+            transition: .4s;
+            border-radius: 24px;
+        }
+        
+        .slider:before {
+            background-color: #fff;
+            bottom: 4px;
+            content: "";
+            height: 16px;
+            left: 4px;
+            position: absolute;
+            transition: .4s;
+            width: 16px;
+            border-radius: 50%;
+        }
+        
+        input:checked + .slider {
+            background-color: var(--light);
+        }
+        
+        input:checked + .slider:before {
+            transform: translateX(26px);
+        }
+        
+        .theme-text {
+            margin-right: 10px;
+            color: white;
+            font-size: 0.9rem;
+        }
+        
         @media (max-width: 600px) {
-            .container {
+            .container, .header-content {
                 padding: 0 15px;
+            }
+            
+            .theme-switch-wrapper {
+                position: static;
+                justify-content: center;
+                margin-top: 10px;
+            }
+            
+            .theme-text {
+                color: var(--text);
             }
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>Rivaldo Ramos</h1>
-        <p>Desenvolvedor Backend | Python | Java</p>
+        <div class="header-content">
+            <div class="theme-switch-wrapper">
+                <span class="theme-text">Claro</span>
+                <label class="theme-switch" for="checkbox">
+                    <input type="checkbox" id="checkbox">
+                    <div class="slider round"></div>
+                </label>
+            </div>
+            
+            <h1>Rivaldo Ramos</h1>
+            <p>Desenvolvedor Backend | Python | Java</p>
+        </div>
     </header>
 
     <div class="container">
@@ -114,20 +225,6 @@
             <a href="https://github.com/ramosmendes/loginspring" target="_blank">Ver código no GitHub →</a>
         </div>
 
-        <!-- Adicione seus projetos Python aqui quando tiver -->
-        <!--
-        <div class="project">
-            <h3>API Django</h3>
-            <div>
-                <span class="tech-badge">Python</span>
-                <span class="tech-badge">Django</span>
-                <span class="tech-badge">DRF</span>
-            </div>
-            <p>Descrição do projeto Python...</p>
-            <a href="#" target="_blank">Ver código no GitHub →</a>
-        </div>
-        -->
-
         <h2>Contato</h2>
         <p>Email: <a href="mailto:ramosmendesfilho@hotmail.com">ramosmendesfilho@hotmail.com</a></p>
         <p>GitHub: <a href="https://github.com/ramosmendes" target="_blank">github.com/ramosmendes</a></p>
@@ -141,6 +238,34 @@
     <script>
         // Atualiza o ano automaticamente
         document.getElementById('year').textContent = new Date().getFullYear();
+        
+        // Toggle de tema
+        const toggleSwitch = document.querySelector('.theme-switch input[type="checkbox"]');
+        const currentTheme = localStorage.getItem('theme');
+        const themeText = document.querySelector('.theme-text');
+        
+        if (currentTheme) {
+            document.documentElement.setAttribute('data-theme', currentTheme);
+            
+            if (currentTheme === 'dark') {
+                toggleSwitch.checked = true;
+                themeText.textContent = 'Claro';
+            }
+        }
+        
+        function switchTheme(e) {
+            if (e.target.checked) {
+                document.documentElement.setAttribute('data-theme', 'dark');
+                localStorage.setItem('theme', 'dark');
+                themeText.textContent = 'Escuro';
+            } else {
+                document.documentElement.setAttribute('data-theme', 'light');
+                localStorage.setItem('theme', 'light');
+                themeText.textContent = 'Claro';
+            }
+        }
+        
+        toggleSwitch.addEventListener('change', switchTheme, false);
     </script>
 </body>
 </html>
