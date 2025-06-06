@@ -1,271 +1,262 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rivaldo Ramos - Desenvolvedor Python/Java</title>
-    <style>
-        :root {
-            --primary: #2c3e50;
-            --secondary: #3498db;
-            --light: #ecf0f1;
-            --dark: #2c3e50;
-            --bg: #f9f9f9;
-            --text: #333;
-            --card-bg: white;
-        }
-        
-        [data-theme="dark"] {
-            --primary: #748ea0;
-            --secondary: #3290ee;
-            --light: #073058;
-            --dark: #ecf0f1;
-            --bg: #121212;
-            --text: #f5f5f5;
-            --card-bg: #1e1e1e;
-        }
-        
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            margin: 0;
-            padding: 0;
-            color: var(--text);
-            background-color: var(--bg);
-            transition: all 0.3s ease;
-        }
-        
-        header {
-            background: var(--primary);
-            color: white;
-            padding: 2rem 0;
-            text-align: center;
-            position: relative;
-        }
-        
-        .header-content {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 0 20px;
-            position: relative;
-        }
-        
-        .container {
-            max-width: 900px;
-            margin: 2rem auto;
-            padding: 0 20px;
-        }
-        
-        .project {
-            background: var(--card-bg);
-            border-radius: 8px;
-            padding: 1.5rem;
-            margin-bottom: 1.5rem;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-            border-left: 4px solid var(--secondary);
-            transition: all 0.3s ease;
-        }
-        
-        .project h3 {
-            color: var(--primary);
-            margin-top: 0;
-        }
-        
-        .tech-badge {
-            display: inline-block;
-            background: var(--light);
-            color: var(--dark);
-            padding: 0.3rem 0.6rem;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            margin-right: 0.5rem;
-            margin-bottom: 0.5rem;
-        }
-        
-        a {
-            color: var(--secondary);
-            text-decoration: none;
-            font-weight: 500;
-        }
-        
-        a:hover {
-            text-decoration: underline;
-        }
-        
-        footer {
-            background: var(--primary);
-            color: white;
-            text-align: center;
-            padding: 1rem 0;
-            margin-top: 2rem;
-        }
-        
-        .theme-switch-wrapper {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            display: flex;
-            align-items: center;
-        }
-        
-        .theme-switch {
-            display: inline-block;
-            height: 24px;
-            position: relative;
-            width: 50px;
-        }
-        
-        .theme-switch input {
-            display: none;
-        }
-        
-        .slider {
-            background-color: #ccc;
-            bottom: 0;
-            cursor: pointer;
-            left: 0;
-            position: absolute;
-            right: 0;
-            top: 0;
-            transition: .4s;
-            border-radius: 24px;
-        }
-        
-        .slider:before {
-            background-color: #fff;
-            bottom: 4px;
-            content: "";
-            height: 16px;
-            left: 4px;
-            position: absolute;
-            transition: .4s;
-            width: 16px;
-            border-radius: 50%;
-        }
-        
-        input:checked + .slider {
-            background-color: var(--light);
-        }
-        
-        input:checked + .slider:before {
-            transform: translateX(26px);
-        }
-        
-        .theme-text {
-            margin-right: 10px;
-            color: white;
-            font-size: 0.9rem;
-        }
-        
-        @media (max-width: 600px) {
-            .container, .header-content {
-                padding: 0 15px;
-            }
-            
-            .theme-switch-wrapper {
-                position: static;
-                justify-content: center;
-                margin-top: 10px;
-            }
-            
-            .theme-text {
-                color: var(--text);
-            }
-        }
-    </style>
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rivaldo Ramos - Desenvolvedor Backend Python/Java</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
     <header>
-        <div class="header-content">
-            <div class="theme-switch-wrapper">
-                <span class="theme-text">Claro</span>
-                <label class="theme-switch" for="checkbox">
-                    <input type="checkbox" id="checkbox">
-                    <div class="slider round"></div>
-                </label>
-            </div>
-            
-            <h1>Rivaldo Ramos</h1>
-            <p>Desenvolvedor Backend | Python | Java</p>
+      <div class="header-content">
+        <div class="theme-switch-wrapper">
+          <span class="theme-text" id="theme-label">Claro</span>
+          <label class="theme-switch" for="checkbox">
+            <input type="checkbox" id="checkbox" />
+            <span class="slider round"></span>
+          </label>
         </div>
+
+        <h1>Rivaldo Ramos</h1>
+        <p>Desenvolvedor Backend | Java | Python</p>
+      </div>
     </header>
 
     <div class="container">
-        <h2>Projetos Destacados</h2>
-        
-        <div class="project">
-            <h3>Workspring</h3>
-            <div>
-                <span class="tech-badge">Java</span>
-                <span class="tech-badge">Spring Boot</span>
-                <span class="tech-badge">JPA</span>
-            </div>
-            <p>Sistema de workshop completo desenvolvido com Spring Boot 3, implementando:</p>
-            <ul>
-                <li>API RESTful com endpoints CRUD</li>
-                <li>Autenticação básica</li>
-                <li>Integração com banco de dados relacional</li>
-            </ul>
-            <a href="https://github.com/ramosmendes/workshop-springboot3-jpa" target="_blank">Ver código no GitHub →</a>
-        </div>
+      <section class="about-me">
+        <h2>Sobre Mim</h2>
+        <p>
+          Sou um desenvolvedor de software com experiência na criação de
+          soluções robustas e escaláveis, utilizando <b>Java</b> e <b>Python</b>.
+          Minha paixão é transformar requisitos complexos em código eficiente e
+          de alta qualidade, sempre buscando otimizar processos e entregar valor
+          real. Sou movido pela curiosidade em novas tecnologias e pela
+          resolução de desafios técnicos, contribuindo para projetos com um
+          impacto significativo.
+        </p>
+      </section>
 
-        <div class="project">
-            <h3>LogSpring</h3>
-            <div>
-                <span class="tech-badge">Java</span>
-                <span class="tech-badge">Spring Security</span>
-                <span class="tech-badge">JWT</span>
-            </div>
-            <p>Sistema de autenticação seguro com:</p>
-            <ul>
-                <li>Geração e validação de tokens JWT</li>
-                <li>Controle de acesso por roles</li>
-                <li>Configuração personalizada de segurança</li>
-            </ul>
-            <a href="https://github.com/ramosmendes/loginspring" target="_blank">Ver código no GitHub →</a>
-        </div>
+      <section class="skills-section">
+        <h2>Habilidades Técnicas</h2>
+        <ul class="skills-grid">
+          <li>Python</li>
+          <li>Java</li>
+          <li>Spring Boot</li>
+          <li>Django</li>
+          <li>JPA / Hibernate</li>
+          <li>Spring Security</li>
+          <li>JWT</li>
+          <li>API RESTful</li>
+          <li>PostgreSQL</li>
+          <li>MySQL</li>
+          <li>Git</li>
+          <li>Docker</li>
+          <li>Suporte</li>
+          <li>Scrum</li>
+          <li>Microsserviços</li>
+        </ul>
+      </section>
 
-        <h2>Contato</h2>
-        <p>Email: <a href="mailto:ramosmendesfilho@hotmail.com">ramosmendesfilho@hotmail.com</a></p>
-        <p>GitHub: <a href="https://github.com/ramosmendes" target="_blank">github.com/ramosmendes</a></p>
-        <p>LinkedIn: <a href="https://www.linkedin.com/in/rivaldo-ramos/" target="_blank">Rivaldo Ramos</a></p>
+      <h2>Projetos Destacados</h2>
+
+      <div class="project">
+        <h3>Workspring - Sistema de Gerenciamento de Workshops</h3>
+        <div>
+          <span class="tech-badge">Java</span>
+          <span class="tech-badge">Spring Boot</span>
+          <span class="tech-badge">JPA</span>
+          <span class="tech-badge">PostgreSQL</span>
+          <span class="tech-badge">RESTful API</span>
+        </div>
+        <p>
+          Este projeto visa otimizar o gerenciamento e a inscrição em workshops,
+          que antes podiam ser manuais ou fragmentados. Desenvolvi um **sistema
+          completo** focado na eficiência e escalabilidade.
+        </p>
+        <ul>
+          <li>
+            API RESTful robusta com endpoints **CRUD** para criação,
+            visualização, atualização e exclusão de workshops e participantes.
+          </li>
+          <li>
+            Utilização de **Spring Boot 3** para um desenvolvimento ágil e
+            integração com **JPA** para persistência de dados em um banco de
+            dados **PostgreSQL**.
+          </li>
+          <li>
+            Implementação de validações de dados e tratamento de exceções para
+            garantir a **integridade** e a **segurança** das informações.
+          </li>
+          <li>
+            **Resultado:** Proporciona uma plataforma centralizada e de fácil
+            uso, melhorando a organização e acessibilidade dos workshops.
+          </li>
+        </ul>
+        <a
+          href="https://github.com/ramosmendes/workshop-springboot3-jpa"
+          target="_blank"
+          >Ver código no GitHub →</a
+        >
+      </div>
+
+      <div class="project">
+        <h3>LogSpring - Sistema de Autenticação e Autorização</h3>
+        <div>
+          <span class="tech-badge">Java</span>
+          <span class="tech-badge">Spring Security</span>
+          <span class="tech-badge">JWT</span>
+          <span class="tech-badge">Autenticação Segura</span>
+        </div>
+        <p>
+          Criei este sistema como uma solução de autenticação e autorização
+          reutilizável para aplicações Java, abordando a necessidade de
+          **segurança robusta** e **controle de acesso granular** em ambientes
+          de desenvolvimento.
+        </p>
+        <ul>
+          <li>
+            Desenvolvimento de um sistema de autenticação seguro utilizando
+            **Spring Security** para proteção de recursos.
+          </li>
+          <li>
+            Implementação de **JSON Web Tokens (JWT)** para a geração e
+            validação de tokens de acesso, garantindo a comunicação segura.
+          </li>
+          <li>
+            Configuração personalizada de regras de segurança e controle de
+            acesso baseado em **roles de usuário**.
+          </li>
+          <li>
+            **Resultado:** Garante um ambiente seguro para o acesso de usuários,
+            facilitando a integração com outras aplicações e padronizando o
+            processo de autenticação.
+          </li>
+        </ul>
+        <a href="https://github.com/ramosmendes/loginspring" target="_blank"
+          >Ver código no GitHub →</a
+        >
+      </div>
+      <!--
+      <div class="project">
+        <h3>API de Gerenciamento de Tarefas (Exemplo Python)</h3>
+        <div>
+          <span class="tech-badge">Python</span>
+          <span class="tech-badge">FastAPI</span>
+          <span class="tech-badge">SQLAlchemy</span>
+          <span class="tech-badge">SQLite</span>
+          <span class="tech-badge">Docker</span>
+        </div>
+        <p>
+          Esta API foi desenvolvida para demonstrar a criação de serviços
+          backend eficientes em Python, focando na **gestão de tarefas**. O
+          objetivo foi construir uma API leve e de alta performance.
+        </p>
+        <ul>
+          <li>
+            API RESTful construída com **FastAPI**, conhecida por sua
+            performance e validação de dados automática (Pydantic).
+          </li>
+          <li>
+            Utilização de **SQLAlchemy** para ORM (Object-Relational Mapping) e
+            **SQLite** para persistência de dados localmente.
+          </li>
+          <li>
+            Implementação de funcionalidades **CRUD** completas para tarefas,
+            incluindo adição, listagem, atualização e exclusão.
+          </li>
+          <li>
+            Containerização com **Docker** para facilitar o ambiente de
+            desenvolvimento e deploy.
+          </li>
+          <li>
+            **Resultado:** Oferece uma solução simples e eficaz para gerenciar
+            tarefas, servindo como um modelo para futuras aplicações backend
+            Python.
+          </li>
+        </ul>
+        <a
+          href="https://github.com/ramosmendes/exemplo-api-python-tasks"
+          target="_blank"
+          >Ver código no GitHub →</a
+        >
+      </div> -->
+
+      <h2>Contato</h2>
+      <div class="contact-links">
+        <a
+          href="mailto:ramosmendesfilho@hotmail.com"
+          target="_blank"
+          aria-label="Email"
+        >
+          <i class="fas fa-envelope"></i>
+        </a>
+        <a
+          href="https://github.com/ramosmendes"
+          target="_blank"
+          aria-label="GitHub"
+        >
+          <i class="fab fa-github"></i>
+        </a>
+        <a
+          href="https://www.linkedin.com/in/rivaldo-ramos/"
+          target="_blank"
+          aria-label="LinkedIn"
+        >
+          <i class="fab fa-linkedin"></i>
+        </a>
+      </div>
     </div>
 
-    <footer>
-        &copy; <span id="year"></span> - Rivaldo Ramos
-    </footer>
+    <footer>&copy; <span id="year"></span> - Rivaldo Ramos</footer>
 
     <script>
-        // Atualiza o ano automaticamente
-        document.getElementById('year').textContent = new Date().getFullYear();
-        
-        // Toggle de tema
-        const toggleSwitch = document.querySelector('.theme-switch input[type="checkbox"]');
-        const currentTheme = localStorage.getItem('theme');
-        const themeText = document.querySelector('.theme-text');
-        
-        if (currentTheme) {
-            document.documentElement.setAttribute('data-theme', currentTheme);
-            
-            if (currentTheme === 'dark') {
-                toggleSwitch.checked = true;
-                themeText.textContent = 'Claro';
-            }
+      // Atualiza o ano automaticamente
+      document.getElementById("year").textContent = new Date().getFullYear();
+
+      // Toggle de tema
+      const toggleSwitch = document.querySelector(
+        '.theme-switch input[type="checkbox"]'
+      );
+      const currentTheme = localStorage.getItem("theme");
+      const themeLabel = document.getElementById("theme-label"); // Seleciona o span
+
+      if (currentTheme) {
+        document.documentElement.setAttribute("data-theme", currentTheme);
+
+        if (currentTheme === "dark") {
+          toggleSwitch.checked = true;
+          themeLabel.textContent = "Escuro"; // Atualiza o texto para Escuro
+        } else {
+          themeLabel.textContent = "Claro"; // Garante o texto 'Claro'
         }
-        
-        function switchTheme(e) {
-            if (e.target.checked) {
-                document.documentElement.setAttribute('data-theme', 'dark');
-                localStorage.setItem('theme', 'dark');
-                themeText.textContent = 'Escuro';
-            } else {
-                document.documentElement.setAttribute('data-theme', 'light');
-                localStorage.setItem('theme', 'light');
-                themeText.textContent = 'Claro';
-            }
+      }
+
+      function switchTheme(e) {
+        if (e.target.checked) {
+          document.documentElement.setAttribute("data-theme", "dark");
+          localStorage.setItem("theme", "dark");
+          themeLabel.textContent = "Escuro"; // Atualiza o texto para Escuro
+        } else {
+          document.documentElement.setAttribute("data-theme", "light");
+          localStorage.setItem("theme", "light");
+          themeLabel.textContent = "Claro"; // Atualiza o texto para Claro
         }
-        
-        toggleSwitch.addEventListener('change', switchTheme, false);
+      }
+
+      toggleSwitch.addEventListener("change", switchTheme, false);
     </script>
-</body>
+  </body>
 </html>
