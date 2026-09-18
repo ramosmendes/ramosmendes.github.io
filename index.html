@@ -7,7 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap"
       rel="stylesheet"
     />
     <link
@@ -22,241 +22,274 @@
   <body>
     <header>
       <div class="header-content">
-        <div class="theme-switch-wrapper">
-          <span class="theme-text" id="theme-label">Claro</span>
-          <label class="theme-switch" for="checkbox">
-            <input type="checkbox" id="checkbox" />
-            <span class="slider round"></span>
-          </label>
-        </div>
+        <button
+          class="theme-toggle"
+          id="theme-toggle"
+          type="button"
+          aria-label="Alternar tema claro/escuro"
+        >
+          <i class="fa-solid fa-sun icon-sun"></i>
+          <i class="fa-solid fa-moon icon-moon"></i>
+        </button>
 
         <h1>Rivaldo Ramos</h1>
-        <p>Desenvolvedor Backend | Java | Python</p>
+        <p class="role">Desenvolvedor Backend — Java &amp; Python</p>
       </div>
     </header>
 
-    <div class="container">
-      <section class="about-me">
-        <h2>Sobre Mim</h2>
+    <main class="container">
+      <section class="about-me reveal">
+        <h2>Sobre mim</h2>
         <p>
-          Sou um desenvolvedor de software com experiência na criação de
-          soluções robustas e escaláveis, utilizando <b>Java</b> e <b>Python</b>.
-          Minha paixão é transformar requisitos complexos em código eficiente e
-          de alta qualidade, sempre buscando otimizar processos e entregar valor
-          real. Sou movido pela curiosidade em novas tecnologias e pela
-          resolução de desafios técnicos, contribuindo para projetos com um
-          impacto significativo.
+          Atuo há mais de três anos com suporte técnico e, nesse período,
+          venho me dedicando a Java e Python para migrar para desenvolvimento
+          backend. Construí os projetos abaixo aplicando Spring Boot, JPA e
+          Spring Security em cenários reais de API RESTful, autenticação e
+          persistência de dados.
+        </p>
+        <p>
+          Busco minha primeira oportunidade como desenvolvedor backend — e
+          sigo aberto também a vagas de suporte técnico.
         </p>
       </section>
 
-      <section class="skills-section">
-        <h2>Habilidades Técnicas</h2>
-        <ul class="skills-grid">
-          <li>Python</li>
-          <li>Java</li>
-          <li>Spring Boot</li>
-          <li>Django</li>
-          <li>JPA / Hibernate</li>
-          <li>Spring Security</li>
-          <li>JWT</li>
-          <li>API RESTful</li>
-          <li>PostgreSQL</li>
-          <li>MySQL</li>
-          <li>Git</li>
-          <li>Docker</li>
-          <li>Suporte</li>
-          <li>Scrum</li>
-          <li>Microsserviços</li>
-        </ul>
+      <section class="skills-section reveal">
+        <h2>Habilidades técnicas</h2>
+
+        <div class="skills-group">
+          <h3>Linguagens</h3>
+          <ul class="skills-list">
+            <li>Python</li>
+            <li>Java</li>
+          </ul>
+        </div>
+
+        <div class="skills-group">
+          <h3>Frameworks &amp; bibliotecas</h3>
+          <ul class="skills-list">
+            <li>Spring Boot</li>
+            <li>Django</li>
+            <li>JPA / Hibernate</li>
+            <li>Spring Security</li>
+          </ul>
+        </div>
+
+        <div class="skills-group">
+          <h3>Dados</h3>
+          <ul class="skills-list">
+            <li>PostgreSQL</li>
+            <li>MySQL</li>
+          </ul>
+        </div>
+
+        <div class="skills-group">
+          <h3>Práticas &amp; ferramentas</h3>
+          <ul class="skills-list">
+            <li>API RESTful</li>
+            <li>JWT</li>
+            <li>Microsserviços</li>
+            <li>Git</li>
+            <li>Docker</li>
+            <li>Scrum</li>
+            <li>Suporte</li>
+          </ul>
+        </div>
       </section>
 
-      <h2>Projetos Destacados</h2>
+      <section class="experience-section reveal">
+        <h2>Experiência</h2>
+        <!--
+          Edite os itens abaixo com suas experiências reais
+          (período, cargo, empresa e principais responsabilidades).
+        -->
+        <ol class="timeline">
+          <li class="timeline-item">
+            <span class="timeline-period">Junho/2025 — presente</span>
+            <h3>Suporte Técnico</h3>
+            <p class="timeline-company">Audiplan Tecnologia</p>
+            <ul>
+              <li>
+                Suporte técnico presencial e remoto, resolvendo problemas
+                dos clientes.
+              </li>
+              <li>Registro e manutenção de inventário de equipamentos.</li>
+              <li>
+                Monitoramento de sistemas corporativos para garantir
+                disponibilidade.
+              </li>
+              <li>
+                Desenvolvimento de uma plataforma interna para gestão de
+                chamados, otimizando o fluxo de trabalho da equipe de
+                suporte.
+              </li>
+            </ul>
+          </li>
+          <li class="timeline-item">
+            <span class="timeline-period">Janeiro/2019 — novembro/2021</span>
+            <h3>Suporte Técnico</h3>
+            <p class="timeline-company">LanMendes</p>
+            <ul>
+              <li>Suporte técnico presencial e remoto aos clientes.</li>
+              <li>Registro de chamados e correção de bugs reportados.</li>
+            </ul>
+          </li>
+        </ol>
+      </section>
 
-      <div class="project">
-        <h3>Workspring - Sistema de Gerenciamento de Workshops</h3>
-        <div>
-          <span class="tech-badge">Java</span>
-          <span class="tech-badge">Spring Boot</span>
-          <span class="tech-badge">JPA</span>
-          <span class="tech-badge">PostgreSQL</span>
-          <span class="tech-badge">RESTful API</span>
+      <section class="projects-section reveal">
+        <h2>Projetos destacados</h2>
+
+        <article class="project">
+          <h3>Workspring — Sistema de gerenciamento de workshops</h3>
+          <div class="tech-badges">
+            <span class="tech-badge">Java</span>
+            <span class="tech-badge">Spring Boot</span>
+            <span class="tech-badge">JPA</span>
+            <span class="tech-badge">PostgreSQL</span>
+            <span class="tech-badge">RESTful API</span>
+          </div>
+          <p>
+            Sistema para gerenciar workshops e inscrições, substituindo
+            controles manuais e planilhas por uma API centralizada.
+          </p>
+          <ul>
+            <li>
+              Endpoints CRUD completos para workshops e participantes,
+              construídos com Spring Boot 3.
+            </li>
+            <li>
+              Modelagem das entidades e relacionamentos do domínio com JPA,
+              persistidos em PostgreSQL.
+            </li>
+            <li>
+              Validações e tratamento de exceções para manter a integridade
+              dos dados.
+            </li>
+            <li>
+              Principal aprendizado: separar as camadas de controller,
+              service e repository para manter a lógica de negócio
+              desacoplada do acesso a dados.
+            </li>
+          </ul>
+          <a
+            class="project-link"
+            href="https://github.com/ramosmendes/workshop-springboot3-jpa"
+            target="_blank"
+            >Ver código no GitHub <i class="fa-solid fa-arrow-right"></i
+          ></a>
+        </article>
+
+        <article class="project">
+          <h3>LogSpring — Sistema de autenticação e autorização</h3>
+          <div class="tech-badges">
+            <span class="tech-badge">Java</span>
+            <span class="tech-badge">Spring Security</span>
+            <span class="tech-badge">JWT</span>
+            <span class="tech-badge">Autenticação segura</span>
+          </div>
+          <p>
+            Módulo de autenticação e autorização reutilizável para aplicações
+            Java, com controle de acesso baseado em papéis de usuário.
+          </p>
+          <ul>
+            <li>
+              Autenticação stateless com Spring Security e JSON Web Tokens
+              (JWT).
+            </li>
+            <li>
+              Regras de autorização por role, restringindo endpoints
+              conforme a permissão do usuário.
+            </li>
+            <li>
+              Filtros de segurança customizados para validar e renovar
+              tokens a cada requisição.
+            </li>
+            <li>
+              Principal aprendizado: entender o fluxo completo de
+              autenticação stateless e como reaproveitá-lo em diferentes
+              aplicações Java.
+            </li>
+          </ul>
+          <a
+            class="project-link"
+            href="https://github.com/ramosmendes/loginspring"
+            target="_blank"
+            >Ver código no GitHub <i class="fa-solid fa-arrow-right"></i
+          ></a>
+        </article>
+      </section>
+
+      <section class="contact-section reveal">
+        <h2>Contato</h2>
+        <div class="contact-links">
+          <a href="mailto:ramosmendesfilho@hotmail.com" target="_blank">
+            <i class="fa-solid fa-envelope"></i>
+            <span>E-mail</span>
+          </a>
+          <a href="https://github.com/ramosmendes" target="_blank">
+            <i class="fa-brands fa-github"></i>
+            <span>GitHub</span>
+          </a>
+          <a href="https://www.linkedin.com/in/rivaldo-ramos/" target="_blank">
+            <i class="fa-brands fa-linkedin"></i>
+            <span>LinkedIn</span>
+          </a>
         </div>
-        <p>
-          Este projeto visa otimizar o gerenciamento e a inscrição em workshops,
-          que antes podiam ser manuais ou fragmentados. Desenvolvi um sistema
-          completo focado na eficiência e escalabilidade.
-        </p>
-        <ul>
-          <li>
-            API RESTful robusta com endpoints CRUD para criação,
-            visualização, atualização e exclusão de workshops e participantes.
-          </li>
-          <li>
-            Utilização de Spring Boot 3 para um desenvolvimento ágil e
-            integração com JPA para persistência de dados em um banco de
-            dados PostgreSQL.
-          </li>
-          <li>
-            Implementação de validações de dados e tratamento de exceções para
-            garantir a integridade e a segurança das informações.
-          </li>
-          <li>
-            Resultado: Proporciona uma plataforma centralizada e de fácil
-            uso, melhorando a organização e acessibilidade dos workshops.
-          </li>
-        </ul>
-        <a
-          href="https://github.com/ramosmendes/workshop-springboot3-jpa"
-          target="_blank"
-          >Ver código no GitHub →</a
-        >
-      </div>
+      </section>
+    </main>
 
-      <div class="project">
-        <h3>LogSpring - Sistema de Autenticação e Autorização</h3>
-        <div>
-          <span class="tech-badge">Java</span>
-          <span class="tech-badge">Spring Security</span>
-          <span class="tech-badge">JWT</span>
-          <span class="tech-badge">Autenticação Segura</span>
-        </div>
-        <p>
-          Criei este sistema como uma solução de autenticação e autorização
-          reutilizável para aplicações Java, abordando a necessidade de
-          segurança robusta e controle de acesso granular em ambientes
-          de desenvolvimento.
-        </p>
-        <ul>
-          <li>
-            Desenvolvimento de um sistema de autenticação seguro utilizando
-            **Spring Security** para proteção de recursos.
-          </li>
-          <li>
-            Implementação de **JSON Web Tokens (JWT)** para a geração e
-            validação de tokens de acesso, garantindo a comunicação segura.
-          </li>
-          <li>
-            Configuração personalizada de regras de segurança e controle de
-            acesso baseado em **roles de usuário**.
-          </li>
-          <li>
-            **Resultado:** Garante um ambiente seguro para o acesso de usuários,
-            facilitando a integração com outras aplicações e padronizando o
-            processo de autenticação.
-          </li>
-        </ul>
-        <a href="https://github.com/ramosmendes/loginspring" target="_blank"
-          >Ver código no GitHub →</a
-        >
-      </div>
-      <!--
-      <div class="project">
-        <h3>API de Gerenciamento de Tarefas (Exemplo Python)</h3>
-        <div>
-          <span class="tech-badge">Python</span>
-          <span class="tech-badge">FastAPI</span>
-          <span class="tech-badge">SQLAlchemy</span>
-          <span class="tech-badge">SQLite</span>
-          <span class="tech-badge">Docker</span>
-        </div>
-        <p>
-          Esta API foi desenvolvida para demonstrar a criação de serviços
-          backend eficientes em Python, focando na **gestão de tarefas**. O
-          objetivo foi construir uma API leve e de alta performance.
-        </p>
-        <ul>
-          <li>
-            API RESTful construída com **FastAPI**, conhecida por sua
-            performance e validação de dados automática (Pydantic).
-          </li>
-          <li>
-            Utilização de **SQLAlchemy** para ORM (Object-Relational Mapping) e
-            **SQLite** para persistência de dados localmente.
-          </li>
-          <li>
-            Implementação de funcionalidades **CRUD** completas para tarefas,
-            incluindo adição, listagem, atualização e exclusão.
-          </li>
-          <li>
-            Containerização com **Docker** para facilitar o ambiente de
-            desenvolvimento e deploy.
-          </li>
-          <li>
-            **Resultado:** Oferece uma solução simples e eficaz para gerenciar
-            tarefas, servindo como um modelo para futuras aplicações backend
-            Python.
-          </li>
-        </ul>
-        <a
-          href="https://github.com/ramosmendes/exemplo-api-python-tasks"
-          target="_blank"
-          >Ver código no GitHub →</a
-        >
-      </div> -->
-
-      <h2>Contato</h2>
-      <div class="contact-links">
-        <a
-          href="mailto:ramosmendesfilho@hotmail.com"
-          target="_blank"
-          aria-label="Email"
-        >
-          <i class="fas fa-envelope"></i>
-        </a>
-        <a
-          href="https://github.com/ramosmendes"
-          target="_blank"
-          aria-label="GitHub"
-        >
-          <i class="fab fa-github"></i>
-        </a>
-        <a
-          href="https://www.linkedin.com/in/rivaldo-ramos/"
-          target="_blank"
-          aria-label="LinkedIn"
-        >
-          <i class="fab fa-linkedin"></i>
-        </a>
-      </div>
-    </div>
-
-    <footer>&copy; <span id="year"></span> - Rivaldo Ramos</footer>
+    <footer>&copy; <span id="year"></span> — Rivaldo Ramos</footer>
 
     <script>
       // Atualiza o ano automaticamente
       document.getElementById("year").textContent = new Date().getFullYear();
 
       // Toggle de tema
-      const toggleSwitch = document.querySelector(
-        '.theme-switch input[type="checkbox"]'
-      );
-      const currentTheme = localStorage.getItem("theme");
-      const themeLabel = document.getElementById("theme-label"); // Seleciona o span
+      const themeToggle = document.getElementById("theme-toggle");
+      const storedTheme = localStorage.getItem("theme");
 
-      if (currentTheme) {
-        document.documentElement.setAttribute("data-theme", currentTheme);
-
-        if (currentTheme === "dark") {
-          toggleSwitch.checked = true;
-          themeLabel.textContent = "Escuro"; // Atualiza o texto para Escuro
-        } else {
-          themeLabel.textContent = "Claro"; // Garante o texto 'Claro'
-        }
+      if (storedTheme) {
+        document.documentElement.setAttribute("data-theme", storedTheme);
       }
 
-      function switchTheme(e) {
-        if (e.target.checked) {
-          document.documentElement.setAttribute("data-theme", "dark");
-          localStorage.setItem("theme", "dark");
-          themeLabel.textContent = "Escuro"; // Atualiza o texto para Escuro
-        } else {
-          document.documentElement.setAttribute("data-theme", "light");
-          localStorage.setItem("theme", "light");
-          themeLabel.textContent = "Claro"; // Atualiza o texto para Claro
-        }
-      }
+      themeToggle.addEventListener("click", () => {
+        const isDark =
+          document.documentElement.getAttribute("data-theme") === "dark";
+        const next = isDark ? "light" : "dark";
+        document.documentElement.setAttribute("data-theme", next);
+        localStorage.setItem("theme", next);
+      });
 
-      toggleSwitch.addEventListener("change", switchTheme, false);
+      // Revela as seções suavemente ao rolar a página
+      const prefersReducedMotion = window.matchMedia(
+        "(prefers-reduced-motion: reduce)"
+      ).matches;
+
+      if (prefersReducedMotion) {
+        document.querySelectorAll(".reveal").forEach((el) => {
+          el.classList.add("in-view");
+        });
+      } else if ("IntersectionObserver" in window) {
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("in-view");
+                observer.unobserve(entry.target);
+              }
+            });
+          },
+          { threshold: 0.15 }
+        );
+
+        document.querySelectorAll(".reveal").forEach((el) => {
+          observer.observe(el);
+        });
+      } else {
+        document.querySelectorAll(".reveal").forEach((el) => {
+          el.classList.add("in-view");
+        });
+      }
     </script>
   </body>
 </html>
